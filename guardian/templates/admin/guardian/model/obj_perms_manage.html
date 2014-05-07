@@ -34,36 +34,7 @@
             <p class="error">{{ error }}</p>
         {% endfor %}
         <div class="form-row user_permissions">
-            <table id="user-permissions" class="object-perms">
-                <caption>{% trans "User permissions" %}</caption>
-                <thead>
-                    <tr>
-                        <th>{% trans "User" %}</th>
-                        {% for perm in model_perms %}
-                        <th>{{ perm.name }}</th>
-                        <th>{% trans "Action" %}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for user, user_perms in users_perms.items %}
-                    <tr>
-                        <td>{{ user }}</td>
-                        {% for perm in model_perms %}
-                        <td>
-                            {% if perm.codename in user_perms %}
-                            {% include "admin/guardian/model/obj_perms_yes.html" %}
-                            {% else %}
-                            {% include "admin/guardian/model/obj_perms_no.html" %}
-                            {% endif %}
-                        </td>
-                        {% endfor %}
-                        <td>
-                            <a href="user-manage/{{ user.id|safe }}/">{% trans "Edit" %}</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+
 
 
             <table id="user-permissions" class="object-perms">
